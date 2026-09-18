@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Survey Hero</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #121212; color: white; text-align: center; padding: 50px 20px; }
+        .container { max-width: 400px; margin: 0 auto; background: #1E1E1E; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { font-size: 26px; margin-bottom: 10px; color: #E2F952; }
+        p { color: #A0A0A0; font-size: 16px; margin-bottom: 30px; line-height: 1.5; }
+        .btn { display: block; width: 100%; padding: 16px; border-radius: 12px; font-size: 18px; font-weight: bold; text-decoration: none; box-sizing: border-box; margin-bottom: 10px; }
+        .btn-android { background-color: #E2F952; color: #121212; }
+        .btn-ios { background-color: #007AFF; color: #FFFFFF; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Survey Hero</h1>
+        <p>Unified utility tracking for door-to-door reps.</p>
+        
+        <div id="android-view" class="hidden">
+            <a href="https://drive.google.com/file/d/1OR1dBwXT1awOcI2ZIUMK9C6YrkdFin0W/view?usp=drivesdk" class="btn btn-android">Download APK (V68)</a>
+            <p style="font-size: 12px; margin-top: 15px;">Tap "Install anyway" if prompted by Google Play Protect.</p>
+        </div>
+        
+        <div id="ios-view" class="hidden">
+            <a href="YOUR_TESTFLIGHT_LINK_HERE" class="btn btn-ios">Download on TestFlight</a>
+            <p style="font-size: 12px; margin-top: 15px;">Requires Apple's free TestFlight app.</p>
+        </div>
+
+        <div id="desktop-view" class="hidden">
+            <p>Please open this page on your iPhone or Android device to download the app.</p>
+        </div>
+    </div>
+
+    <script>
+        function serveCorrectDownload() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                document.getElementById('android-view').classList.remove('hidden');
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                document.getElementById('ios-view').classList.remove('hidden');
+            } else {
+                document.getElementById('desktop-view').classList.remove('hidden');
+            }
+        }
+        serveCorrectDownload();
+    </script>
+</body>
+</html>
