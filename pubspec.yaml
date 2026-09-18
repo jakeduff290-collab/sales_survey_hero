@@ -1,0 +1,33 @@
+name: sales_survey_hero
+description: Sales Survey Hero OCR App
+publish_to: 'none'
+version: 1.0.0+12
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  shared_preferences: ^2.5.5
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  image_picker: ^1.0.7
+  google_mlkit_text_recognition: 0.11.0
+  camera: ^0.12.1
+  permission_handler: 11.3.1
+  firebase_core: ^4.14.0
+  firebase_auth: ^6.7.0
+  cloud_firestore: ^6.10.0
+  http: ^1.6.0
+  webview_flutter: ^4.14.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+dependency_overrides:
+  camera_android_camerax: 0.7.3

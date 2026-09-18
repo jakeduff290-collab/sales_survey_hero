@@ -1,0 +1,9 @@
+build/
+*.apk
+*.aab
+.dart_tool/
+android/.gradle/
+ios/.symlinks/
+ios/Pods/
+.env
+functions/.env
